@@ -1,14 +1,14 @@
 <template>
   <div class="about-grid">
     <div>
-      <h2>À Propos</h2>
-      <p style="color:var(--muted);max-width:60ch">Je suis développeur front-end passionné par les interfaces propres et performantes. J'aime transformer des idées en interfaces fonctionnelles et accessibles. J'écris du code maintenable et lisible, et j'apprécie les designs minimalistes.</p>
-      <p style="margin-top:1rem">Basé en France — disponible pour collaborations freelance ou CDI.</p>
+      <h2 style="text-align: center;">À Propos</h2>
+      <p style="color:var(--muted);max-width:60ch">Je suis actuellement en 3e année à l'IT University Madagascar. Développeur surtout orienté backend, j'aime concevoir des API robustes, scalables et faciles à maintenir. Je m'intéresse aussi au frontend : créer des interfaces simples, accessibles et réactives</p>
+      <p style="margin-top:1rem">Basé à Madagascar — ouvert aux missions freelance et au stage ! N'hésitez pas à me contacter pour en discuter !</p>
     </div>
 
-    <div style="display:flex;justify-content:center;align-items:center">
-      <div class="avatar">Vous</div>
-    </div>
+    <!--<div style="display:flex;justify-content:center;align-items:center">
+      <div class="avatar">Sandratra</div>
+    </div>-->
   </div>
 </template>
 
