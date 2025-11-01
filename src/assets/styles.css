@@ -115,6 +115,15 @@ main {
   padding-top: 0
 }
 
+/* About: don't take full viewport — use half page and center content */
+.section-about {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0; /* avoid extra top offset inside the half-height area */
+}
+
 .hero-inner {
   display: flex;
   flex-direction: column;
