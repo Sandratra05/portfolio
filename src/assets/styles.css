@@ -163,10 +163,9 @@ main {
 
 /* About */
 .about-grid {
-  display: grid;
-  grid-template-columns: 1fr 320px;
+  display: flex;
   gap: 2rem;
-  align-items: center
+  align-content: center
 }
 
 .avatar {
@@ -179,6 +178,12 @@ main {
   justify-content: center;
   color: #083;
   font-weight: 800
+}
+
+.section-techs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem
 }
 
 /* Tech bars */
