@@ -23,11 +23,47 @@
 const projects = [
   { title: 'Projet A', description: 'Application web responsive — UI minimaliste', link: '#', repo: '#' },
   { title: 'Projet B', description: 'Dashboard interactif avec visualisation', link: '#', repo: '#' },
+  { title: 'Projet C', description: 'Micro-site performant optimisé SEO', link: '#', repo: '#' },
   { title: 'Projet C', description: 'Micro-site performant optimisé SEO', link: '#', repo: '#' }
 ]
 </script>
 
 <style scoped>
-.card-hero{background:linear-gradient(135deg,#14539a,#4ea700)}
-.card h4{margin:0}
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.card {
+  width: calc(33.333% - 1rem);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(10, 10, 10, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.card-hero {
+  background: linear-gradient(135deg, #14539a, #4ea700);
+}
+
+.card h4 {
+  margin: 0;
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 0.625rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
 </style>

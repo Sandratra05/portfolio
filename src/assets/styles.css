@@ -224,12 +224,13 @@ main {
 
 /* Projects grid */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
+  /*grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));*/
   gap: 1.25rem
 }
 
 .card {
+  width: 35%;
   background: #fff;
   padding: 1rem;
   border-radius: 12px;
