@@ -26,7 +26,10 @@ const basesDonnees = ref([
 
 const outils = ref([
   { name: 'Git', level: 70 },
-  { name: 'Docker', level: 50 }
+  { name: 'Docker', level: 50 },
+  { name: 'Linux', level: 90 },
+  { name: 'Postman', level: 60 },
+  { name: 'Figma', level: 60 }
 ])
 </script>
 
@@ -42,7 +45,11 @@ const outils = ref([
         <div v-for="t in langages" :key="t.name" class="tech-item">
           <div class="tech-name"><span>{{t.name}}</span><small>{{t.level}}%</small></div>
           <div class="progress" aria-hidden>
-            <i :style="{width: t.level + '%'}"></i>
+            <i :style="{width: t.level + '%'}" :class="{
+              'level-master': t.level > 80,
+              'level-intermediate': t.level > 50 && t.level <= 80,
+              'level-basic': t.level <= 50
+            }"></i>
           </div>
         </div>
       </div>
@@ -55,7 +62,11 @@ const outils = ref([
         <div v-for="t in frameworks" :key="t.name" class="tech-item">
           <div class="tech-name"><span>{{t.name}}</span><small>{{t.level}}%</small></div>
           <div class="progress" aria-hidden>
-            <i :style="{width: t.level + '%'}"></i>
+            <i :style="{width: t.level + '%'}" :class="{
+              'level-master': t.level > 80,
+              'level-intermediate': t.level > 50 && t.level <= 80,
+              'level-basic': t.level <= 50
+            }"></i>
           </div>
         </div>
       </div>
@@ -68,7 +79,11 @@ const outils = ref([
         <div v-for="t in basesDonnees" :key="t.name" class="tech-item">
           <div class="tech-name"><span>{{t.name}}</span><small>{{t.level}}%</small></div>
           <div class="progress" aria-hidden>
-            <i :style="{width: t.level + '%'}"></i>
+            <i :style="{width: t.level + '%'}" :class="{
+              'level-master': t.level > 80,
+              'level-intermediate': t.level > 50 && t.level <= 80,
+              'level-basic': t.level <= 50
+            }"></i>
           </div>
         </div>
       </div>
@@ -81,7 +96,11 @@ const outils = ref([
         <div v-for="t in outils" :key="t.name" class="tech-item">
           <div class="tech-name"><span>{{t.name}}</span><small>{{t.level}}%</small></div>
           <div class="progress" aria-hidden>
-            <i :style="{width: t.level + '%'}"></i>
+            <i :style="{width: t.level + '%'}" :class="{
+              'level-master': t.level > 80,
+              'level-intermediate': t.level > 50 && t.level <= 80,
+              'level-basic': t.level <= 50
+            }"></i>
           </div>
         </div>
       </div>
@@ -93,6 +112,10 @@ const outils = ref([
 h1 {
   text-align: center;
   color: var(--color-primary);
+}
+
+h3 {
+  text-align: center;
 }
 
 .tech-container {
