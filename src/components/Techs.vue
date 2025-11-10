@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 const langages = ref([
-  { name: 'Java', level: 80, icon: 'devicon-java-plain colored' },
+  { name: 'Java', level: 90, icon: 'devicon-java-plain colored' },
   { name: 'C#', level: 70, icon: 'devicon-csharp-plain colored' },
   { name: 'C', level: 60, icon: 'devicon-c-plain colored' },
   { name: 'Python', level: 70, icon: 'devicon-python-plain colored' },
