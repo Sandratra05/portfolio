@@ -2,34 +2,34 @@
 import { ref } from 'vue'
 
 const langages = ref([
-  { name: 'Java', level: 80 },
-  { name: 'C#', level: 70 },
-  { name: 'C', level: 60 },
-  { name: 'Python', level: 70 },
-  { name: 'PHP', level: 80 },
-  { name: 'JavaScript', level: 70 },
-  { name: 'Visual Basic', level: 50 }
+  { name: 'Java', level: 90, icon: 'devicon-java-plain colored' },
+  { name: 'C#', level: 70, icon: 'devicon-csharp-plain colored' },
+  { name: 'C', level: 60, icon: 'devicon-c-plain colored' },
+  { name: 'Python', level: 70, icon: 'devicon-python-plain colored' },
+  { name: 'PHP', level: 80, icon: 'devicon-php-plain colored' },
+  { name: 'JavaScript', level: 70, icon: 'devicon-javascript-plain colored' },
+  { name: 'Visual Basic', level: 50, icon: 'devicon-dot-net-plain colored' }
 ])
 
 const frameworks = ref([
-  { name: 'Spring Boot', level: 90 },
-  { name: 'ASP.NET', level: 50 },
-  { name: 'Flight PHP', level: 90 },
-  { name: 'VueJS', level: 60 }
+  { name: 'Spring Boot', level: 90, icon: 'devicon-spring-plain colored' },
+  { name: 'ASP.NET', level: 50, icon: 'devicon-dot-net-plain colored' },
+  { name: 'Flight PHP', level: 90, icon: 'devicon-php-plain colored' },
+  { name: 'VueJS', level: 60, icon: 'devicon-vuejs-plain colored' }
 ])
 
 const basesDonnees = ref([
-  { name: 'MySQL', level: 95 },
-  { name: 'PostgreSQL', level: 93 },
-  { name: 'Oracle', level: 50 }
+  { name: 'MySQL', level: 95, icon: 'devicon-mysql-plain colored' },
+  { name: 'PostgreSQL', level: 93, icon: 'devicon-postgresql-plain colored' },
+  { name: 'Oracle', level: 50, icon: 'devicon-oracle-plain colored' }
 ])
 
 const outils = ref([
-  { name: 'Git', level: 70 },
-  { name: 'Docker', level: 50 },
-  { name: 'Linux', level: 90 },
-  { name: 'Postman', level: 60 },
-  { name: 'Figma', level: 60 }
+  { name: 'Git', level: 70, icon: 'devicon-git-plain colored' },
+  { name: 'Docker', level: 50, icon: 'devicon-docker-plain colored' },
+  { name: 'Linux', level: 90, icon: 'devicon-linux-plain' },
+  { name: 'Postman', level: 60, icon: 'devicon-postman-plain colored' },
+  { name: 'Figma', level: 60, icon: 'devicon-figma-plain colored' }
 ])
 </script>
 
@@ -43,7 +43,13 @@ const outils = ref([
       <h3>Langages</h3>
       <div class="tech-list">
         <div v-for="t in langages" :key="t.name" class="tech-item">
-          <div class="tech-name"><span>{{t.name}}</span><small>{{t.level}}%</small></div>
+          <div class="tech-name">
+            <span class="tech-label">
+              <i :class="t.icon" class="tech-icon"></i>
+              {{t.name}}
+            </span>
+            <small>{{t.level}}%</small>
+          </div>
           <div class="progress" aria-hidden>
             <i :style="{width: t.level + '%'}" :class="{
               'level-master': t.level > 80,
@@ -60,7 +66,13 @@ const outils = ref([
       <h3>Frameworks</h3>
       <div class="tech-list">
         <div v-for="t in frameworks" :key="t.name" class="tech-item">
-          <div class="tech-name"><span>{{t.name}}</span><small>{{t.level}}%</small></div>
+          <div class="tech-name">
+            <span class="tech-label">
+              <i :class="t.icon" class="tech-icon"></i>
+              {{t.name}}
+            </span>
+            <small>{{t.level}}%</small>
+          </div>
           <div class="progress" aria-hidden>
             <i :style="{width: t.level + '%'}" :class="{
               'level-master': t.level > 80,
@@ -77,7 +89,13 @@ const outils = ref([
       <h3>Bases de données</h3>
       <div class="tech-list">
         <div v-for="t in basesDonnees" :key="t.name" class="tech-item">
-          <div class="tech-name"><span>{{t.name}}</span><small>{{t.level}}%</small></div>
+          <div class="tech-name">
+            <span class="tech-label">
+              <i :class="t.icon" class="tech-icon"></i>
+              {{t.name}}
+            </span>
+            <small>{{t.level}}%</small>
+          </div>
           <div class="progress" aria-hidden>
             <i :style="{width: t.level + '%'}" :class="{
               'level-master': t.level > 80,
@@ -94,7 +112,13 @@ const outils = ref([
       <h3>Outils</h3>
       <div class="tech-list">
         <div v-for="t in outils" :key="t.name" class="tech-item">
-          <div class="tech-name"><span>{{t.name}}</span><small>{{t.level}}%</small></div>
+          <div class="tech-name">
+            <span class="tech-label">
+              <i :class="t.icon" class="tech-icon"></i>
+              {{t.name}}
+            </span>
+            <small>{{t.level}}%</small>
+          </div>
           <div class="progress" aria-hidden>
             <i :style="{width: t.level + '%'}" :class="{
               'level-master': t.level > 80,
@@ -140,6 +164,16 @@ h3 {
 
 .tech-item {
   width: 250px;
+}
+
+.tech-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-icon {
+  font-size: 1.5rem;
 }
 
 .tech-item small {

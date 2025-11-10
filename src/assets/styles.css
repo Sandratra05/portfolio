@@ -223,7 +223,7 @@ main {
 }
 
 .progress>i.level-basic {
-  background: linear-gradient(90deg, #01377d, #0a54b4, #26b170);
+  background: linear-gradient(90deg, #01377d, #085dcc, #26b170);
 }
 
 .progress>i.level-intermediate {
