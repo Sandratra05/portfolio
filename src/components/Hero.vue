@@ -4,7 +4,12 @@
       <h1 class="hero-title">RABENANAHARY <br> <span style="color: black;">Sandratra Hasinarivelo</span></h1>
       <p class="hero-sub">Je conçois des interfaces minimalistes et des expériences front-end performantes. Ici vous trouverez mes compétences, technologies et mes projets récents.</p>
       <div style="display:flex;gap:1rem;align-items:center">
-        <a class="cta" href="#projects">Voir mes projets</a>
+        <a class="cta" :href="cv" download target="_blank" rel="noopener noreferrer">
+          Télécharger mon CV
+          <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M5 20h14v-2H5v2zM12 3v10.17l3.59-3.58L17 11l-5 5-5-5 .41-.41L11 13.17V3h1z"/>
+          </svg>
+        </a>
         <a class="cta secondary" href="#about">En savoir plus</a>
       </div>
     </div>
@@ -19,6 +24,7 @@
 
 <script setup>
 // static hero — personnalisez le texte ici
+import cv from "../assets/cv/CV-Sandratra-v1.pdf"
 </script>
 
 <style scoped>
@@ -63,6 +69,12 @@
   object-fit: cover;
   object-position: center;
   display: block;
+}
+
+.download-icon {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  fill: currentColor;
 }
 
 /* Responsive */
