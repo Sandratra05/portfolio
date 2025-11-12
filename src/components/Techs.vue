@@ -143,7 +143,7 @@ h3 {
 }
 
 .tech-container {
-  width: 100%;
+  width: 70%;
 }
 .tech-section {
   margin-bottom: 2rem;
