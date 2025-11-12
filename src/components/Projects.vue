@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h2>Projets</h2>
-    <p style="color:var(--muted);margin-bottom:1rem">Quelques projets récents — cliquez pour voir en détail.</p>
+    <h1>Projets</h1>
+    <p style="color:var(--muted);margin-bottom:1rem; text-align: center;">Quelques projets récents — cliquez pour voir en détail.</p>
 
     <div class="projects-grid">
       <article class="card" v-for="p in projects" :key="p.title">
@@ -29,6 +29,11 @@ const projects = [
 </script>
 
 <style scoped>
+h1 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
