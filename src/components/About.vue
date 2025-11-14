@@ -2,11 +2,11 @@
   <div class="about-grid">
     <div class="about">
       <h1 style="text-align: center;">À Propos</h1>
-        <p style="color:var(--muted); text-align: center; max-width: 50%;">Je suis actuellement en 3e année à l'IT University Madagascar.
+        <p style="color:var(--muted); text-align: center; max-width: 50%;">Je suis actuellement en 3ème année à l'IT University Madagascar.
           Développeur surtout orienté backend, j'aime concevoir des API robustes, scalables et faciles à maintenir. Je
           m'intéresse aussi au frontend : créer des interfaces simples, accessibles et réactives
         </p>
-          <p style="margin-top:1rem; max-width: 50%;">Basé à Madagascar — ouvert aux missions freelance et au stage ! N'hésitez pas à me
+          <p style="margin-top:1rem; max-width: 50%;">Je suis ouvert aux missions freelance et au stage ! N'hésitez pas à me
           contacter pour en discuter !</p>
     </div>
 
