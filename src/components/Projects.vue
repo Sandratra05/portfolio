@@ -42,7 +42,7 @@ const projects = [
     link: '#', 
     repo: '#', 
     image: cafeDashboardImage,
-    technologies: ['Java', 'Spring Boot', 'MySQL', 'HTML/CSS', 'JavaScript']
+    technologies: ['Spring MVC', 'JavaScript',  'MySQL', 'Tailwind CSS', 'JSP']
   },
   { 
     title: 'Système de gestion de d\'emploi du temps.', 
@@ -50,7 +50,7 @@ const projects = [
     link: '#', 
     repo: '#', 
     image: loginLycee,
-    technologies: ['PHP', 'Flight PHP', 'MySQL', 'HTML/CSS', 'JavaScript']
+    technologies: ['Spring Boot', 'JavaScript', 'PostgreSQL', 'Tailwind CSS', 'JSP']
   },
   { 
     title: 'Projet C', 
