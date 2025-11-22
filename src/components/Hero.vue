@@ -2,7 +2,7 @@
   <div class="hero-container">
     <div class="hero-inner">
       <h1 class="hero-title">RABENANAHARY <br> <span style="color: black;">Sandratra Hasinarivelo</span></h1>
-      <p class="hero-sub">Je conçois des interfaces minimalistes et des expériences front-end performantes. Ici vous trouverez mes compétences, technologies et mes projets récents.</p>
+      <p class="hero-sub">Aspirant à être un développeur logiciel et développeur web, je me spécialise dans la création d'applications robustes et d'interfaces utilisateur intuitives. Je développe mes compétences à travers des projets concrets et innovants.</p>
       <div style="display:flex;gap:1rem;align-items:center">
         <a class="cta" :href="cv" download target="_blank" rel="noopener noreferrer">
           Télécharger mon CV
