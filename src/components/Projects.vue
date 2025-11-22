@@ -34,11 +34,13 @@
 <script setup>
 import cafeDashboardImage from '../assets/images/cafe-dashboard-vente.png'
 import loginLycee from '../assets/images/nan-login.png'
+import ticketCRM from '../assets/images/ticketing.png'
+import adoption from '../assets/images/adoptMe.png'
 
 const projects = [
   { 
     title: 'Gestion de la production de café.', 
-    description: 'Gestion de la production de café avec tableau de bord interactif, permettant de suivre la production en temps réel.', 
+    description: 'Gestion de la production de café avec tableau de bord interactif, permettant de suivre la production, de la torréfaction à la distribution, en temps réel.', 
     link: '#', 
     repo: '#', 
     image: cafeDashboardImage,
@@ -46,25 +48,27 @@ const projects = [
   },
   { 
     title: 'Système de gestion de d\'emploi du temps.', 
-    description: 'Contribution dans la conception et la réalisation d\'une application web pour gérer les emplois du temps du lycée Nanisana.', 
+    description: 'Contribution à la conception et à la réalisation d\'une application web pour gérer les emplois du temps du lycée Nanisana.', 
     link: '#', 
     repo: '#', 
     image: loginLycee,
     technologies: ['Spring Boot', 'JavaScript', 'PostgreSQL', 'Tailwind CSS', 'JSP']
   },
   { 
-    title: 'Projet C', 
-    description: 'Micro-site performant optimisé SEO', 
+    title: 'Système de gestion de ticketing pour CRM', 
+    description: 'Site web de ticketing dans une entrepise, facilitant la gestion CRM des clients, ainsi que le suivi des demandes et des résolutions au sein des équipes techniques.', 
     link: '#', 
     repo: '#',
-    technologies: ['Vue.js', 'Vite', 'CSS']
+    image: ticketCRM,
+    technologies: ['Flight PHP', 'JavaScript', 'CSS', 'PostgreSQL']
   },
   { 
-    title: 'Projet D', 
-    description: 'Application mobile avec interface moderne', 
+    title: 'Plateforme d\'adoption d\'animaux', 
+    description: 'Une application web avec une interface moderne permettant aux utilisateurs de parcourir et d\'adopter des animaux de compagnie.', 
     link: '#', 
     repo: '#',
-    technologies: ['React', 'Node.js', 'MongoDB']
+    image: adoption,
+    technologies: ['PHP', 'CSS', 'MySQL']
   }
 ]
 </script>
@@ -97,7 +101,8 @@ h1 {
 }
 
 .card-hero {
-  height: 30vh;
+  width: 100%;
+  height: 200px;
   border-radius: 8px;
   overflow: hidden;
   background: linear-gradient(135deg, #14539a, #4ea700);
@@ -136,11 +141,19 @@ h1 {
   .card {
     width: calc(50% - 0.625rem);
   }
+  
+  .card-hero {
+    height: 150px;
+  }
 }
 
 @media (max-width: 480px) {
   .card {
     width: 100%;
+  }
+  
+  .card-hero {
+    height: 180px;
   }
 }
 </style>
