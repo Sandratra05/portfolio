@@ -4,8 +4,8 @@
       <div class="footer-content">
         <!-- Section principale -->
         <div class="footer-section">
-          <div class="footer-brand">Sandratra Hasinarivelo</div>
-          <p class="footer-description">Développeur web passionné, spécialisé dans la création d'applications robustes et d'interfaces utilisateur intuitives.</p>
+          <div class="footer-brand">Sandratra Rabenanahary</div>
+          <p class="footer-description">Développeur passionné, spécialisé dans la création d'applications robustes et d'interfaces utilisateur intuitives.</p>
         </div>
 
         <!-- Navigation -->
@@ -55,7 +55,7 @@
 
       <!-- Ligne de copyright -->
       <div class="footer-bottom">
-        <div class="copyright">© {{ year }} Sandratra Hasinarivelo — Tous droits réservés</div>
+        <div class="copyright">© {{ year }} Sandratra Rabenanahary — Tous droits réservés</div>
       </div>
     </div>
   </footer>
