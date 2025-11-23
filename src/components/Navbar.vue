@@ -23,7 +23,7 @@
 const links = [
   { href: '#home', label: 'Accueil' },
   { href: '#about', label: 'À Propos' },
-  { href: '#tech', label: 'Technos' },
+  { href: '#tech', label: 'Technologies' },
   { href: '#projects', label: 'Projets' }
 ]
 
