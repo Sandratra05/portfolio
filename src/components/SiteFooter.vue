@@ -5,7 +5,7 @@
         <!-- Section principale -->
         <div class="footer-section">
           <div class="footer-brand">Sandratra Hasinarivelo</div>
-          <p class="footer-description">Développeur web passionné, spécialisé dans la création d'applications robustes et d'interfaces utilisateur intuitives.</p>
+          <p class="footer-description">Développeur passionné, spécialisé dans la création d'applications robustes et d'interfaces utilisateur intuitives.</p>
         </div>
 
         <!-- Navigation -->
