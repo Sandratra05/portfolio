@@ -21,7 +21,7 @@
             </span>
           </div>
           
-          <div style="display:flex;gap:.5rem;margin-top:.5rem">
+          <div style="display:flex;gap:.5rem;margin-top:1.5rem">
             <a class="cta" :href="p.link" target="_blank">Voir</a>
             <a class="cta secondary" :href="p.repo" target="_blank">Code</a>
           </div>
