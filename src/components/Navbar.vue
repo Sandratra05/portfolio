@@ -39,19 +39,44 @@ function goToSection(href){
 </script>
 
 <style scoped>
-.nav-root{box-shadow:none}
-.brand{
-  font-size:0.98rem;
-  text-decoration:none;
+.nav-root {
+  box-shadow: none;
+}
+
+.brand {
+  font-size: 0.98rem;
+  text-decoration: none;
   cursor: pointer;
 }
-.nav-links a{
-  font-size:0.95rem;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-.nav-links a:hover, .brand:hover{
+
+.brand:hover {
   color: var(--color-primary);
-  background: rgba(16,54,125,0.04);
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+.nav-links a:hover::after {
+  width: 80%;
 }
 </style>
