@@ -47,7 +47,7 @@ const projects = [
     technologies: ['Spring MVC', 'JavaScript',  'MySQL', 'Tailwind CSS', 'JSP']
   },
   { 
-    title: 'Système de gestion de d\'emploi du temps.', 
+    title: 'Système de gestion d\'emploi du temps.', 
     description: 'Contribution à la conception et à la réalisation d\'une application web pour gérer les emplois du temps du lycée Nanisana.', 
     link: '#', 
     repo: '#', 
