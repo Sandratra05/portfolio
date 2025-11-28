@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
     <h1>Projets</h1>
-    <p style="color:var(--muted);margin-bottom:1rem; text-align: center;">Quelques projets récents — cliquez pour voir en détail.</p>
+    <p style="color:var(--muted);margin-bottom:1rem; text-align: center;">Quelques projets récents que j'ai réalisés.</p>
 
     <div class="projects-grid">
       <article class="card" v-for="p in projects" :key="p.title">
