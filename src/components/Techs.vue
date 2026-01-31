@@ -1,5 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useTranslation } from '../composables/useTranslation'
+
+const { t } = useTranslation()
 
 const langages = ref([
   { name: 'Java', level: 90, icon: 'devicon-java-plain colored' },
@@ -36,12 +39,13 @@ const outils = ref([
 
 <template>
   <div class="tech-container">
-    <h1>Technologies</h1>
-    <p style="color:var(--muted);margin-bottom:1rem; text-align: center;">Voici quelques-unes des technologies que j'utilise et mon niveau approximatif.</p>
+    <span class="section-label">{{ t('techs.label') }}</span>
+    <h1>{{ t('techs.title') }}</h1>
+    <p>{{ t('techs.subtitle') }}</p>
 
     <!-- Langages -->
     <div class="tech-section">
-      <h3>Langages</h3>
+      <h3>{{ t('techs.languages') }}</h3>
       <div class="tech-list">
         <div v-for="t in langages" :key="t.name" class="tech-item">
           <div class="tech-name">
@@ -87,7 +91,7 @@ const outils = ref([
 
     <!-- Bases de données -->
     <div class="tech-section">
-      <h3>Bases de données</h3>
+      <h3>{{ t('techs.databases') }}</h3>
       <div class="tech-list">
         <div v-for="t in basesDonnees" :key="t.name" class="tech-item">
           <div class="tech-name">
@@ -110,7 +114,7 @@ const outils = ref([
 
     <!-- Outils -->
     <div class="tech-section">
-      <h3>Outils</h3>
+      <h3>{{ t('techs.tools') }}</h3>
       <div class="tech-list">
         <div v-for="t in outils" :key="t.name" class="tech-item">
           <div class="tech-name">
@@ -134,50 +138,20 @@ const outils = ref([
 </template>
 
 <style scoped>
-h1 {
-  text-align: center;
-  color: var(--color-primary);
-}
-
-h3 {
-  text-align: center;
-}
-
-.tech-container {
-  width: 70%;
-}
-.tech-section {
-  margin-bottom: 2rem;
+.section-label {
+  display: flex;
+  justify-content: center;
 }
 
 .tech-section h3 {
-  margin-bottom: 1rem;
-  color: var(--color-primary);
-  font-size: 1.2rem;
+  text-align: left;
 }
 
-.tech-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-.tech-item {
-  width: 250px;
-}
-
-.tech-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.tech-icon {
-  font-size: 1.5rem;
-}
-
-.tech-item small {
-  color: var(--muted);
+.tech-section h3::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
 }
 </style>

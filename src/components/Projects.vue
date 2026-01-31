@@ -1,29 +1,44 @@
 <template>
   <div class="projects">
-    <h1>Projets</h1>
-    <p style="color:var(--muted);margin-bottom:1rem; text-align: center;">Quelques projets récents que j'ai réalisés.</p>
+    <span class="section-label">Portfolio</span>
+    <h1>{{ t('projects.title') }}</h1>
+    <p>{{ t('projects.subtitle') }}</p>
 
     <div class="projects-grid">
-      <article class="card" v-for="p in projects" :key="p.title">
+      <article class="card" v-for="p in projects" :key="p.id">
         <div class="card-hero"><img :src="p.image" :alt="p.title"></div>
-        <div>
+        <div class="card-body">
           <h4>{{p.title}}</h4>
-          <p style="color:var(--muted);margin:6px 0">{{p.description}}</p>
+          <p class="card-description">{{p.shortDescription || p.description}}</p>
           
           <!-- Technologies utilisées -->
           <div class="tech-badges" v-if="p.technologies">
             <span 
-              v-for="tech in p.technologies" 
+              v-for="tech in p.technologies.slice(0, 3)" 
               :key="tech" 
               class="tech-badge"
             >
               {{tech}}
             </span>
+            <span v-if="p.technologies.length > 3" class="tech-badge more">
+              +{{ p.technologies.length - 3 }}
+            </span>
           </div>
           
-          <div style="display:flex;gap:.5rem;margin-top:1.5rem">
-            <a class="cta" :href="p.link" target="_blank">Voir</a>
-            <a class="cta secondary" :href="p.repo" target="_blank">Code</a>
+          <div class="card-actions">
+            <router-link :to="`/project/${p.id}`" class="cta primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+              </svg>
+              {{ t('projects.view') }}
+            </router-link>
+            <a v-if="p.repo && p.repo !== '#'" class="cta secondary" :href="p.repo" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" d="M6.28 5.22a.75.75 0 010 1.06L2.56 10l3.72 3.72a.75.75 0 01-1.06 1.06L.97 10.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0zm7.44 0a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 010-1.06zM11.377 2.011a.75.75 0 01.612.867l-2.5 14.5a.75.75 0 01-1.478-.255l2.5-14.5a.75.75 0 01.866-.612z" clip-rule="evenodd" />
+              </svg>
+              Code
+            </a>
           </div>
         </div>
       </article>
@@ -32,128 +47,16 @@
 </template>
 
 <script setup>
-import cafeDashboardImage from '../assets/images/cafe-dashboard-vente.png'
-import loginLycee from '../assets/images/nan-login.png'
-import ticketCRM from '../assets/images/ticketing.png'
-import adoption from '../assets/images/adoptMe.png'
+import { useTranslation } from '../composables/useTranslation'
+import { useProjects } from '../composables/useProjects'
 
-const projects = [
-  { 
-    title: 'Gestion de la production de café.', 
-    description: 'Gestion de la production de café avec tableau de bord interactif, permettant de suivre la production, de la torréfaction à la distribution, en temps réel.', 
-    link: '#', 
-    repo: '#', 
-    image: cafeDashboardImage,
-    technologies: ['Spring MVC', 'JavaScript',  'MySQL', 'Tailwind CSS', 'JSP']
-  },
-  { 
-    title: 'Système de gestion d\'emploi du temps.', 
-    description: 'Contribution à la conception et à la réalisation d\'une application web pour gérer les emplois du temps du lycée Nanisana.', 
-    link: '#', 
-    repo: '#', 
-    image: loginLycee,
-    technologies: ['Spring Boot', 'JavaScript', 'PostgreSQL', 'Tailwind CSS', 'JSP']
-  },
-  { 
-    title: 'Système de gestion de ticketing pour CRM', 
-    description: 'Site web de ticketing dans une entrepise, facilitant la gestion CRM des clients, ainsi que le suivi des demandes et des résolutions au sein des équipes techniques.', 
-    link: '#', 
-    repo: '#',
-    image: ticketCRM,
-    technologies: ['Flight PHP', 'JavaScript', 'CSS', 'PostgreSQL']
-  },
-  { 
-    title: 'Plateforme d\'adoption d\'animaux', 
-    description: 'Une application web avec une interface moderne permettant aux utilisateurs de parcourir et d\'adopter des animaux de compagnie.', 
-    link: '#', 
-    repo: '#',
-    image: adoption,
-    technologies: ['PHP', 'CSS', 'MySQL']
-  }
-]
+const { t } = useTranslation()
+const { projects } = useProjects()
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  color: var(--color-primary);
-  margin-bottom: 0.25rem;
-}
-.projects {
-  max-width: 70%;
-}
-.projects-grid {
+.section-label {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-}
-
-.card {
-  width: calc(33.333% - 1rem);
-  height: 50vh;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(10, 10, 10, 0.04);
-  display: flex;
-  flex-direction: column;
-  gap: .75rem;
-}
-
-.card-hero {
-  width: 100%;
-  height: 200px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #14539a, #4ea700);
-}
-
-.card-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.card h4 {
-  margin: 0;
-}
-
-.tech-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.75rem 0;
-}
-
-.tech-badge {
-  background: rgba(16, 54, 125, 0.1);
-  color: var(--color-primary);
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border: 1px solid rgba(16, 54, 125, 0.2);
-}
-
-/* Responsive pour petits écrans */
-@media (max-width: 768px) {
-  .card {
-    width: calc(50% - 0.625rem);
-  }
-  
-  .card-hero {
-    height: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    width: 100%;
-  }
-  
-  .card-hero {
-    height: 180px;
-  }
+  justify-content: center;
 }
 </style>
