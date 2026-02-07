@@ -1,47 +1,50 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useTranslation } from '../composables/useTranslation'
+
+const { t } = useTranslation()
 
 const langages = ref([
   { name: 'Java', level: 90, icon: 'devicon-java-plain colored' },
-  { name: 'C#', level: 70, icon: 'devicon-csharp-plain colored' },
-  { name: 'C', level: 60, icon: 'devicon-c-plain colored' },
-  { name: 'C++', level: 40, icon: 'devicon-cplusplus-plain colored' },
+  { name: 'C#', level: 60, icon: 'devicon-csharp-plain colored' },
   { name: 'Python', level: 70, icon: 'devicon-python-plain colored' },
   { name: 'PHP', level: 80, icon: 'devicon-php-plain colored' },
-  { name: 'JavaScript', level: 70, icon: 'devicon-javascript-plain colored' },
-  { name: 'Visual Basic', level: 50, icon: 'devicon-dot-net-plain colored' }
+  { name: 'JavaScript', level: 70, icon: 'devicon-javascript-plain colored' }
 ])
 
 const frameworks = ref([
   { name: 'Spring Boot', level: 90, icon: 'devicon-spring-plain colored' },
-  { name: 'ASP.NET', level: 50, icon: 'devicon-dot-net-plain colored' },
+  { name: 'ASP.NET', level: 60, icon: 'devicon-dot-net-plain colored' },
   { name: 'Flight PHP', level: 90, icon: 'devicon-php-plain colored' },
+  { name: 'Laravel', level: 50, icon: 'devicon-laravel-plain colored' },
+  { name: 'ReactJS', level: 50, icon: 'devicon-react-plain colored' },
   { name: 'VueJS', level: 60, icon: 'devicon-vuejs-plain colored' }
 ])
 
 const basesDonnees = ref([
   { name: 'MySQL', level: 95, icon: 'devicon-mysql-plain colored' },
-  { name: 'PostgreSQL', level: 93, icon: 'devicon-postgresql-plain colored' },
+  { name: 'PostgreSQL', level: 90, icon: 'devicon-postgresql-plain colored' },
   { name: 'Oracle', level: 50, icon: 'devicon-oracle-plain colored' }
 ])
 
 const outils = ref([
-  { name: 'Git', level: 70, icon: 'devicon-git-plain colored' },
-  { name: 'Docker', level: 50, icon: 'devicon-docker-plain colored' },
-  { name: 'Linux', level: 90, icon: 'devicon-linux-plain' },
-  { name: 'Postman', level: 60, icon: 'devicon-postman-plain colored' },
+  { name: 'Git', level: 80, icon: 'devicon-git-plain colored' },
+  { name: 'Docker', level: 70, icon: 'devicon-docker-plain colored' },
+  { name: 'Linux', level: 90, icon: 'devicon-linux-plain colored' },
+  { name: 'Postman', level: 70, icon: 'devicon-postman-plain colored' },
   { name: 'Figma', level: 60, icon: 'devicon-figma-plain colored' }
 ])
 </script>
 
 <template>
   <div class="tech-container">
-    <h1>Technologies</h1>
-    <p style="color:var(--muted);margin-bottom:1rem; text-align: center;">Voici quelques-unes des technologies que j'utilise et mon niveau approximatif.</p>
+    <span class="section-label">{{ t('techs.label') }}</span>
+    <h1>{{ t('techs.title') }}</h1>
+    <p>{{ t('techs.subtitle') }}</p>
 
     <!-- Langages -->
     <div class="tech-section">
-      <h3>Langages</h3>
+      <h3>{{ t('techs.languages') }}</h3>
       <div class="tech-list">
         <div v-for="t in langages" :key="t.name" class="tech-item">
           <div class="tech-name">
@@ -87,7 +90,7 @@ const outils = ref([
 
     <!-- Bases de données -->
     <div class="tech-section">
-      <h3>Bases de données</h3>
+      <h3>{{ t('techs.databases') }}</h3>
       <div class="tech-list">
         <div v-for="t in basesDonnees" :key="t.name" class="tech-item">
           <div class="tech-name">
@@ -110,7 +113,7 @@ const outils = ref([
 
     <!-- Outils -->
     <div class="tech-section">
-      <h3>Outils</h3>
+      <h3>{{ t('techs.tools') }}</h3>
       <div class="tech-list">
         <div v-for="t in outils" :key="t.name" class="tech-item">
           <div class="tech-name">
@@ -134,50 +137,20 @@ const outils = ref([
 </template>
 
 <style scoped>
-h1 {
-  text-align: center;
-  color: var(--color-primary);
-}
-
-h3 {
-  text-align: center;
-}
-
-.tech-container {
-  width: 70%;
-}
-.tech-section {
-  margin-bottom: 2rem;
+.section-label {
+  display: flex;
+  justify-content: center;
 }
 
 .tech-section h3 {
-  margin-bottom: 1rem;
-  color: var(--color-primary);
-  font-size: 1.2rem;
+  text-align: left;
 }
 
-.tech-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-.tech-item {
-  width: 250px;
-}
-
-.tech-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.tech-icon {
-  font-size: 1.5rem;
-}
-
-.tech-item small {
-  color: var(--muted);
+.tech-section h3::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
 }
 </style>
