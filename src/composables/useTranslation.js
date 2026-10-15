@@ -139,7 +139,7 @@ const translations = {
         school: 'La Farandole Private High School'
       },
       license: {
-        period: '2023 - present',
+        period: '2023 - 2026',
         degree: 'Bachelor\'s Degree in Computer Science',
         details: 'Ongoing program focused on software and web development.',
         school: 'IT University'
