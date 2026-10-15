@@ -14,8 +14,8 @@ const langages = [
 const frameworks = [
   { name: 'Spring Boot' , icon: 'devicon-spring-plain colored' },
   { name: 'Flight PHP' , icon: 'devicon-php-plain colored' },
-  { name: 'ReactJS' , icon: 'devicon-react-plain colored' },
-  { name: 'VueJS' , icon: 'devicon-vuejs-plain colored' },
+  { name: 'React' , icon: 'devicon-react-plain colored' },
+  { name: 'Vue' , icon: 'devicon-vuejs-plain colored' },
 ]
 
 const basesDonnees = [
