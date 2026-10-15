@@ -7,12 +7,14 @@ const { t } = useTranslation()
 const langages = [
   { name: 'Java' , icon: 'devicon-java-plain colored' },
   { name: 'PHP' , icon: 'devicon-php-plain colored' },
-  { name: 'JavaScript' , icon: 'devicon-javascript-plain colored' }
+  { name: 'JavaScript' , icon: 'devicon-javascript-plain colored' },
+  { name: 'TypeScript' , icon: 'devicon-typescript-plain colored' }
 ]
 
 const frameworks = [
   { name: 'Spring Boot' , icon: 'devicon-spring-plain colored' },
   { name: 'Flight PHP' , icon: 'devicon-php-plain colored' },
+  { name: 'ReactJS' , icon: 'devicon-reactjs-plain colored' },
   { name: 'VueJS' , icon: 'devicon-vuejs-plain colored' },
 ]
 
